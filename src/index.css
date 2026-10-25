@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 49% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 49% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 49% 8%;
+    --primary: 220 49% 8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 94%;
+    --secondary-foreground: 221 50% 20%;
+    --muted: 214 32% 95%;
+    --muted-foreground: 220 12% 38%;
+    --accent: 172 66% 50%;
+    --accent-foreground: 220 49% 8%;
+    --destructive: 351 84% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 89%;
+    --input: 214 32% 88%;
+    --ring: 198 93% 60%;
+    --chart-1: 172 66% 50%;
+    --chart-2: 239 84% 67%;
+    --chart-3: 198 93% 60%;
+    --chart-4: 43 96% 56%;
+    --chart-5: 351 95% 71%;
+    --radius: 0.9rem;
+    --font-heading: 'Sora', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 220 49% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 172 66% 50%;
+    --sidebar-primary-foreground: 220 49% 8%;
+    --sidebar-accent: 221 40% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 221 35% 22%;
+    --sidebar-ring: 198 93% 60%;
+
+    /* ThinkForward — Connected Thinking palette */
+    --tf-navy: 220 49% 8%;
+    --tf-navy-800: 221 44% 12%;
+    --tf-navy-700: 221 40% 17%;
+    --tf-dark-blue: 221 50% 28%;
+    --tf-teal: 172 66% 50%;
+    --tf-teal-ink: 175 84% 26%;
+    --tf-indigo: 239 84% 67%;
+    --tf-indigo-ink: 244 58% 47%;
+    --tf-sky: 198 93% 60%;
+    --tf-sky-ink: 201 64% 34%;
+    --tf-yellow: 43 96% 56%;
+    --tf-yellow-ink: 36 45% 30%;
+    --tf-coral: 351 95% 71%;
+    --tf-coral-ink: 345 57% 38%;
+    --tf-mint: 149 80% 90%;
+    --tf-soft: 210 40% 98%;
+    --tf-line: 214 32% 91%;
+  }
+
+  .dark {
+    --background: 220 49% 8%;
+    --foreground: 210 40% 98%;
+    --card: 221 44% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 221 44% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 172 66% 50%;
+    --primary-foreground: 220 49% 8%;
+    --secondary: 221 40% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 221 40% 17%;
+    --muted-foreground: 214 32% 75%;
+    --accent: 239 84% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 351 84% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 221 35% 22%;
+    --input: 221 35% 22%;
+    --ring: 198 93% 60%;
+    --chart-1: 172 66% 50%;
+    --chart-2: 239 84% 67%;
+    --chart-3: 198 93% 60%;
+    --chart-4: 43 96% 56%;
+    --chart-5: 351 95% 71%;
+    --sidebar-background: 220 49% 8%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 172 66% 50%;
+    --sidebar-primary-foreground: 220 49% 8%;
+    --sidebar-accent: 221 40% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 221 35% 22%;
+    --sidebar-ring: 198 93% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-size: 17px;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-heading tracking-tight;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgba(45, 212, 191, 0.32);
+  }
+
+  :where(a, button, summary, input, textarea, select, [tabindex]):focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 3px solid #38bdf8 !important;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .tf-grid {
+    background-image:
+      linear-gradient(to right, rgba(226, 232, 240, 0.075) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226, 232, 240, 0.075) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .tf-grid-light {
+    background-image:
+      linear-gradient(to right, rgba(11, 18, 32, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(11, 18, 32, 0.05) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .tf-hero-glow {
+    background:
+      radial-gradient(circle at 15% 12%, rgba(45, 212, 191, 0.18), transparent 45%),
+      radial-gradient(circle at 82% 8%, rgba(99, 102, 241, 0.22), transparent 50%),
+      radial-gradient(circle at 55% 95%, rgba(56, 189, 248, 0.14), transparent 55%);
+  }
+
+  .tf-section-glow-teal {
+    background: radial-gradient(circle at 20% 0%, rgba(45, 212, 191, 0.16), transparent 60%);
+  }
+
+  .tf-fade-up {
+    animation: tf-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .tf-d1 { animation-delay: 0.06s; }
+  .tf-d2 { animation-delay: 0.12s; }
+  .tf-d3 { animation-delay: 0.18s; }
+  .tf-d4 { animation-delay: 0.24s; }
+  .tf-d5 { animation-delay: 0.3s; }
+
+  .tf-dash {
+    stroke-dasharray: 5 9;
+    animation: tf-dash 22s linear infinite;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes tf-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tf-dash {
+  to {
+    stroke-dashoffset: -280;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tf-fade-up,
+  .tf-dash {
+    animation: none !important;
+  }
+}

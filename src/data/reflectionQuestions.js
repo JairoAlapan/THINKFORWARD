@@ -1,0 +1,60 @@
+export const REFLECTION_QUESTIONS = [
+  {
+    id: "problem",
+    label: "What problem would you like to solve in your school or community?",
+    hint: "Name one specific problem, not a general topic.",
+    prompt: "Which repeated annoyance affects the most people?",
+    required: true,
+    rows: 4,
+  },
+  {
+    id: "solution",
+    label: "What solution would you propose?",
+    hint: "Describe what you would actually do, and who would do it.",
+    prompt: "What is the simplest version of your idea that could be tried this month?",
+    required: true,
+    rows: 5,
+  },
+  {
+    id: "why",
+    label: "Why do you think it could work?",
+    hint: "Connect the solution to a cause you have noticed.",
+    prompt: "What evidence or experience makes you think this is the right fix?",
+    required: true,
+    rows: 5,
+  },
+  {
+    id: "explain",
+    label: "How would you explain your solution to another person?",
+    hint: "Write it the way you would say it to a classmate who has not read anything about your idea.",
+    prompt: "Try: 'The problem is ___. My idea is ___. It should help because ___.'",
+    required: true,
+    rows: 5,
+  },
+  {
+    id: "limits",
+    label: "What limitations or challenges might you encounter?",
+    hint: "Cost, time, permission, or people who may not follow the change.",
+    prompt: "Who would need to agree, and what could they object to?",
+    required: false,
+    rows: 4,
+  },
+  {
+    id: "fallback",
+    label: "What would you change if your first solution did not work?",
+    hint: "Describe your second attempt, not a whole new project.",
+    prompt: "Which part of the idea would you keep, and which part would you replace?",
+    required: false,
+    rows: 4,
+  },
+  {
+    id: "discovery",
+    label: "What did you discover about your problem-solving and innovative thinking?",
+    hint: "Be honest about which part was hardest and which part felt natural.",
+    prompt: "Was the difficulty in finding the idea, explaining it, or judging it fairly?",
+    required: false,
+    rows: 4,
+  },
+];
+
+export const EMPTY_REFLECTION = REFLECTION_QUESTIONS.reduce((acc, q) => ({ ...acc, [q.id]: "" }), {});
